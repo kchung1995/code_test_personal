@@ -41,6 +41,7 @@ void dijkstra(int start) {
     d[start] = 0;
     while (!pq.empty()) {
         int distance = -pq.top().first;      //현재 노드까지의 비용
+        // -를 붙이는 이유는 오름차순 정렬을 하기 위함이다. C++의 기본 priority queue는 큰 숫자를 최상단에 둔다. 즉 내림차순.
         int now = pq.top().second;          //현재 노드
         pq.pop();
         if (distance > d[now]) continue;
